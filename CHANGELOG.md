@@ -1,3 +1,8 @@
+##1.0.0 ( Oct 28, 2015 )
+
+####Features
+Added support for es_heap_size.
+
 ##0.9.9 ( Sep 01, 2015 )
 
 ###Summary

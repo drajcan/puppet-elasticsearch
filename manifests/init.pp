@@ -19,6 +19,11 @@
 #   * This is thus destructive and should be used with care.
 #   Defaults to <tt>present</tt>.
 #
+# [*es_heap_size*]
+#   String. Allow to set heap size for elasticsearch.
+#   Example values: <tt>'256m, 1g'</tt>.
+#   Defaults to <tt>undef</tt>.
+#
 # [*autoupgrade*]
 #   Boolean. If set to <tt>true</tt>, any managed package gets upgraded
 #   on each Puppet run when the package provider is able to find a newer
@@ -200,6 +205,7 @@
 #
 class elasticsearch(
   $ensure                = $elasticsearch::params::ensure,
+  $es_heap_size          = undef,
   $status                = $elasticsearch::params::status,
   $restart_on_change     = $elasticsearch::params::restart_on_change,
   $autoupgrade           = $elasticsearch::params::autoupgrade,

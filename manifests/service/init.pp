@@ -24,6 +24,11 @@
 #   * This is thus destructive and should be used with care.
 #   Defaults to <tt>present</tt>.
 #
+# [*es_heap_size*]
+#   String. Allow to set heap size for elasticsearch.
+#   Example values: <tt>'256m, 1g'</tt>.
+#   Defaults to <tt>undef</tt>.
+#
 # [*status*]
 #   String to define the status of the service. Possible values:
 #   * <tt>enabled</tt>: Service is running and will be started at boot time.
@@ -57,6 +62,7 @@
 define elasticsearch::service::init(
   $ensure             = $elasticsearch::ensure,
   $status             = $elasticsearch::status,
+  $es_heap_size       = $elasticsearch::es_heap_size,
   $init_defaults_file = undef,
   $init_defaults      = undef,
   $init_template      = undef,
